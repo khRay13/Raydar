@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>
+		@title_Content
+	</title>
+	<style>
+		nav {
+			display: block;
+		}
+
+		table, th, td {
+			border: 1px solid;
+		}
+
+		.cellCenter {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h2>
+		<nav id="nav" name="nav">
+			Navigation:
+			<a href="#Majuro_h">Majuro</a> |
+			<a href="#Pohnpei_h">Pohnpei</a> |
+			<a href="#Kosrae_h">Kosrae</a> |
+			<a href="#Tarawa_h">Tarawa</a> |
+			<a href="#Rabaul_h">Rabaul</a> |
+			<a href="#Funafuti_h">Funafuti</a> |
+			<a href="#Honiara_h">Honiara</a> |
+			<a href="#Noro_h">Noro</a> |
+			<a href="#PAGOPAGO_h">PAGOPAGO</a> |
+		</nav>
+	</h2>
+	@body_Content
+</body>
+<script type="text/javascript">
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		anchor.addEventListener('click', function (e) {
+			e.preventDefault();
+			document.querySelector(this.getAttribute('href')).scrollIntoView({
+				behavior: 'smooth'
+			});
+		});
+	});
+</script>
+</html>

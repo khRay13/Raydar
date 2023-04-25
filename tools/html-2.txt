@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>
+		@title_Content
+	</title>
+	<style>
+		nav {
+			display: block;
+		}
+
+		table, th, td {
+			border: 1px solid;
+		}
+
+		.cellCenter {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h2>
+		<nav id="nav" name="nav">
+			Navigation:
+			<a href="#Victoria_h">Victoria</a> |
+			<a href="#Port_Victoria_h">Port_Victoria</a> |
+			<a href="#Louis_h">Louis</a> |
+			<a href="#Diego_Suarez_h">Diego_Suarez</a> |
+			<a href="#Manta_h">Manta</a> |
+			<a href="#Posorja_h">Posorja</a> |
+			<a href="#Manzanillo_h">Manzanillo</a> |
+			<a href="#Mazatlan_h">Mazatlan</a> |
+			<a href="#Dakar_h">Dakar</a> |
+			<a href="#Abidjan_h">Abidjan</a> |
+		</nav>
+	</h2>
+	@body_Content
+</body>
+<script type="text/javascript">
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		anchor.addEventListener('click', function (e) {
+			e.preventDefault();
+			document.querySelector(this.getAttribute('href')).scrollIntoView({
+				behavior: 'smooth'
+			});
+		});
+	});
+</script>
+</html>
